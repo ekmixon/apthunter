@@ -219,7 +219,7 @@ if args.winlogbeat_JSON is not None:
 # https://saralgyaan.com/posts/f-string-in-python-usage-guide/
 
 # Hit count total (very, very simple metric) to determine presence of APSTs
-if len(results) > 0:
+if results:
     hits = 0
     for result in results:
         hits = hits + result.hits.total
@@ -227,6 +227,6 @@ if len(results) > 0:
     print(f"APST Query Hits: {hits}")
     print(f"Hits Per Sensor: {per_index}")
 else:
-    print(f"No APST Detected from Queries")
+    print("No APST Detected from Queries")
 
 
